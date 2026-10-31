@@ -1,0 +1,159 @@
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHTBTube - İzle, Keşfet, Paylaş</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+    <a href="#" class="brand">
+        <span class="brand-mark">S</span>
+        SHTB<span class="brand-accent">Tube</span>
+    </a>
+
+    <form class="search" id="searchForm">
+        <input type="search" id="searchInput"
+        placeholder="Video veya kanal ara...">
+        <button type="submit">⌕</button>
+    </form>
+
+    <div class="top-actions">
+        <button class="icon-btn" id="uploadOpen">＋ Yükle</button>
+        <button class="avatar" id="accountOpen">S</button>
+    </div>
+</header>
+
+<aside class="sidebar">
+    <button class="nav-item active" data-filter="all">⌂ Keşfet</button>
+    <button class="nav-item" data-filter="popular">↗ Popüler</button>
+    <button class="nav-item" data-filter="recent">◷ En yeni</button>
+
+    <div class="side-line"></div>
+
+    <p class="side-label">KÜTÜPHANE</p>
+    <button class="nav-item">♡ Beğendiklerim</button>
+
+    <div class="side-note">
+        SHTBTube'a hoş geldin.
+        Keşfet, paylaş ve kendi kanalını oluştur.
+    </div>
+</aside>
+
+<main class="content">
+
+    <section class="welcome">
+        <div>
+            <p class="eyebrow">YENİ BİR YAYIN ALANI</p>
+            <h1>İzle. Keşfet. <span>Paylaş.</span></h1>
+            <p class="welcome-copy">
+                Videoların için yeni bir yer.
+                SHTBTube topluluğuna katıl.
+            </p>
+        </div>
+
+        <div class="welcome-orb">
+            <span>▶</span>
+        </div>
+    </section>
+
+    <div class="section-head">
+        <div>
+            <p class="eyebrow">SENİN AKIŞIN</p>
+            <h2 id="feedTitle">Öne çıkan videolar</h2>
+        </div>
+        <span class="demo-tag">SHTBTUBE</span>
+    </div>
+
+    <section class="video-grid" id="videoGrid"></section>
+
+    <p class="empty hidden" id="emptyState">
+        Henüz video yok. İlk videoyu sen ekleyebilirsin!
+    </p>
+
+</main>
+
+<dialog id="uploadDialog" class="modal">
+    <form id="uploadForm" class="modal-card">
+        <button type="button" class="close"
+        data-close="uploadDialog">×</button>
+
+        <p class="eyebrow">İÇERİĞİNİ PAYLAŞ</p>
+        <h2>Video yükle</h2>
+
+        <label>
+            Video başlığı
+            <input id="videoTitle" required maxlength="90"
+            placeholder="Videonun başlığı">
+        </label>
+
+        <label>
+            Kanal adı
+            <input id="channelName" required maxlength="35"
+            placeholder="Kanal adın">
+        </label>
+
+        <label>
+            Kategori
+            <select id="videoCategory">
+                <option>Oyun</option>
+                <option>Eğlence</option>
+                <option>Animasyon</option>
+                <option>Eğitim</option>
+                <option>Müzik</option>
+                <option>Diğer</option>
+            </select>
+        </label>
+
+        <label>
+            Video dosyası
+            <input id="videoFile" type="file" accept="video/*">
+        </label>
+
+        <p class="form-hint">
+            İlk sürümde yüklemeler yerel ön izleme içindir.
+        </p>
+
+        <button class="primary-btn" type="submit">
+            Videoyu ekle
+        </button>
+    </form>
+</dialog>
+
+<dialog id="accountDialog" class="modal">
+    <form method="dialog" class="modal-card">
+        <button type="button" class="close"
+        data-close="accountDialog">×</button>
+
+        <p class="eyebrow">SHTBTUBE HESABI</p>
+        <h2>Hesap sistemi yakında!</h2>
+        <p class="form-hint">
+            Gerçek üyelik sistemi sonraki geliştirme aşamasında eklenecek.
+        </p>
+        <button class="primary-btn">Tamam</button>
+    </form>
+</dialog>
+
+<dialog id="playerDialog" class="modal player-modal">
+    <div class="modal-card">
+        <button type="button" class="close"
+        data-close="playerDialog">×</button>
+
+        <video id="player" controls playsinline></video>
+        <h2 id="playerTitle">Video</h2>
+        <p id="playerMeta" class="form-hint"></p>
+    </div>
+</dialog>
+
+<footer>
+    © 2026 SHTBTube • Kendi yayın alanın.
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>
+```
